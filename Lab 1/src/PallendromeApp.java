@@ -4,7 +4,7 @@ public class PallendromeApp {
 		String halfWordTwo = "";
 		String halfWordOne = word.substring(0, (word.length()/2));
 		
-		if (word.length()%2==0)
+		if ((word.length()%2==0))
 			halfWordTwo = word.substring(word.length()/2,word.length());
 		else
 			halfWordTwo = word.substring(word.length()/2+1,word.length());
