@@ -2,19 +2,17 @@
 public class PallendromeApp {
 	public boolean Palledrome(String word) {
 		String halfWordTwo = "";
-		String halfWordOne = word.substring(0, (word.length()/2));
 		
-		if ((word.length()%2==0))
-			halfWordTwo = word.substring(word.length()/2,word.length());
-		else
-			halfWordTwo = word.substring(word.length()/2+1,word.length());
 		
-		char[] array= halfWordTwo.toCharArray();
+		char[] array= word.toCharArray();
 		int beginWord = 0;
 		int endWord = array.length-1;
 		char letter; 
 		
 		while(endWord>beginWord) {
+			if(array[beginWord].equals(" "))
+				beginWord++;
+				
 			letter = array[beginWord];
 			array[beginWord]=array[endWord];
 			array[endWord]=letter;
@@ -22,7 +20,7 @@ public class PallendromeApp {
 			beginWord++;
 		}
 		halfWordTwo = new String(array);
-		if(halfWordOne.equals(halfWordTwo))
+		if(word.equals(halfWordTwo))
 			return true;
 		else
 			return false;
